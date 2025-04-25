@@ -14,7 +14,7 @@ export default function Home() {
             Case Management System
           </h1>
         </header>
-        <section className="bg-white shadow-xl rounded-xl p-6 border border-gray-100 z-10">
+        <section className="bg-white shadow-2xl rounded-xl p-6 border border-gray-100 z-10">
           <form
             onSubmit={(e) => e.preventDefault()}
             className="flex flex-col gap-5"
@@ -90,9 +90,14 @@ export default function Home() {
         {/* Some condition to render the section */}
         <section className="p-5 flex flex-col gap-5">
           <header>
-            <h2 className="text-lg font-semibold">My Tasks</h2>
+            <h2 className="text-lg font-bold">My Tasks</h2>
           </header>
-          <TaskCard />
+          <ul className="flex flex-wrap gap-5 ">
+            {/* {tasks.map((task) => ( */}
+            <li key={1}>
+              <TaskCard />
+            </li>
+          </ul>
         </section>
       </div>
     </main>
