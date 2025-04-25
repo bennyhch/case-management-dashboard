@@ -1,5 +1,7 @@
 "use client";
 
+import TaskCard from "@/components/TaskCard";
+
 const inputFieldClasses =
   "border-1 border-gray-600 rounded-xl p-3 text-sm focus:outline-none focus:border-gray-950 focus:ring-1 focus:ring-gray-950 transition-all";
 
@@ -84,6 +86,13 @@ export default function Home() {
               </button>
             </div>
           </form>
+        </section>
+        {/* Some condition to render the section */}
+        <section className="p-5 flex flex-col gap-5">
+          <header>
+            <h2 className="text-lg font-semibold">My Tasks</h2>
+          </header>
+          <TaskCard />
         </section>
       </div>
     </main>
