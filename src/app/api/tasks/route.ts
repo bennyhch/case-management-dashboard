@@ -17,7 +17,7 @@ export async function GET() {
       createdAt: "desc",
     },
   });
-  return NextResponse.json(tasks);
+  return NextResponse.json(tasks, { status: 200 });
 }
 
 export async function POST(req: Request) {
