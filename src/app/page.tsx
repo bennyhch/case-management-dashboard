@@ -171,28 +171,31 @@ export default function Home() {
             </div>
           </form>
         </section>
-        {/* Some condition to render the section */}
-        <section className="p-5 flex flex-col gap-5">
-          <header>
-            <h2 className="text-lg font-bold">My Tasks</h2>
-          </header>
-          <ul className="flex flex-wrap gap-5 ">
-            {tasks.map(({ id, title, status, dueDate, descritpion }) => {
-              return (
-                <li key={id}>
-                  <TaskCard
-                    fetchTasks={fetchTasks}
-                    id={id}
-                    title={title}
-                    description={descritpion}
-                    status={status}
-                    dueDate={dueDate}
-                  />
-                </li>
-              );
-            })}
-          </ul>
-        </section>
+
+        {tasks.length > 0 && (
+          <section className="p-5 flex flex-col gap-5">
+            <header>
+              <h2 className="text-lg font-bold">My Tasks</h2>
+            </header>
+            <ul className="flex flex-wrap gap-5 ">
+              {tasks.map(({ id, title, status, dueDate, description }) => {
+                return (
+                  // <li key={id} className="w-full sm:w-[calc(50%-10px)]">
+                  <li key={id} className="w-full">
+                    <TaskCard
+                      fetchTasks={fetchTasks}
+                      id={id}
+                      title={title}
+                      description={description}
+                      status={status}
+                      dueDate={dueDate}
+                    />
+                  </li>
+                );
+              })}
+            </ul>
+          </section>
+        )}
       </div>
     </main>
   );
