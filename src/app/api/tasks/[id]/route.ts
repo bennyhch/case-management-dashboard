@@ -50,3 +50,29 @@ export async function PATCH(req: Request) {
 
   return NextResponse.json(task, { status: 200 });
 }
+
+export async function GET(req: Request) {
+  const url = new URL(req.url);
+  const idFromUrl = url.pathname.split("/").pop(); // get the last part (the id)
+
+  if (!idFromUrl) {
+    return NextResponse.json({ error: "ID is required" }, { status: 400 });
+  }
+
+  const id = Number(idFromUrl);
+
+  const task = await prisma.task.findUnique({
+    where: {
+      id: Number(id),
+    },
+    select: {
+      id: true,
+      title: true,
+      description: true,
+      status: true,
+      dueDate: true,
+    },
+  });
+
+  return NextResponse.json(task, { status: 200 });
+}

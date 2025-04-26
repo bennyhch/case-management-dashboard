@@ -15,6 +15,7 @@ const initialTaskState = {
 };
 
 export default function Home() {
+  const [task, setTask] = useState(initialTaskState);
   const [tasks, setTasks] = useState([]);
 
   const fetchTasks = async () => {
@@ -24,7 +25,6 @@ export default function Home() {
         throw new Error("Failed to fetch tasks");
       }
       const data = await res.json();
-      console.log("data", data);
       setTasks(data);
     } catch (error) {
       console.error("Error fetching tasks:", error);
@@ -38,8 +38,6 @@ export default function Home() {
       setTasks([]);
     };
   }, []);
-
-  const [task, setTask] = useState(initialTaskState);
 
   const submitHanlder = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -180,7 +178,6 @@ export default function Home() {
             <ul className="flex flex-wrap gap-5 ">
               {tasks.map(({ id, title, status, dueDate, description }) => {
                 return (
-                  // <li key={id} className="w-full sm:w-[calc(50%-10px)]">
                   <li key={id} className="w-full">
                     <TaskCard
                       fetchTasks={fetchTasks}

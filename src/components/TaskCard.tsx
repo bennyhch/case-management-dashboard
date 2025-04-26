@@ -27,13 +27,8 @@ const statusMap: Record<
   },
 };
 
-type StatusPillProps = {
-  status: Status;
-};
-
-const StatusPill = ({ status }: StatusPillProps) => {
+const StatusPill = ({ status }: { status: Status }) => {
   const { label, bgColor, textColor } = statusMap[status];
-
   return (
     <span
       className={`${bgColor} ${textColor} text-xs font-medium mr-2 p-1 rounded`}
@@ -64,21 +59,6 @@ const TaskCard = ({
   const formattedDueDate = momentDueDate.format("MMMM Do YYYY");
   const isoDate = momentDueDate.toISOString();
 
-  const deleteHandler = async () => {
-    const response = await fetch(`/api/tasks/${id}`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-
-    if (response.ok) {
-      fetchTasks();
-    } else {
-      console.error("Failed to delete task");
-    }
-  };
-
   const [isEditing, setIsEditing] = useState(false);
   const [currentStatus, setCurrentStatus] = useState(status);
 
@@ -99,6 +79,21 @@ const TaskCard = ({
       fetchTasks();
     } catch (error) {
       console.error(error);
+    }
+  };
+
+  const deleteHandler = async () => {
+    const response = await fetch(`/api/tasks/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    if (response.ok) {
+      fetchTasks();
+    } else {
+      console.error("Failed to delete task");
     }
   };
 
