@@ -6,14 +6,14 @@ This API manages tasks with CRUD operations, supporting basic functions such as 
 
 <hr/>
 
-## NOtes
+## Notes
 
 - Soft delete: Tasks are not permanently deleted. They're marked with a `deletedAt` timestamp and filtered out in the `GET /api/tasks` endpoint
 - Status Options: `Open`, `IN_PROGRESS`, `COMPLETED`
 
 ## Tech Stack
 
-- Backend: Nextjs Route Handlers
+- Backend: Nextjs Route Handlerrs
 - Database: Prisma ORM, MySQL
 
 ## Overview
@@ -30,7 +30,7 @@ This API manages tasks with CRUD operations, supporting basic functions such as 
 
 - **Method**: `GET`
 - **URL**: `/api/tasks`
-- **Description**: Fetches all active (not deleted) tasks, ordered by newest first.
+- **Description**: Fetches all active (not deleted) tasks, ordered b newest first.
 
 #### Response
 
