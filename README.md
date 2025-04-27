@@ -47,7 +47,7 @@ git clone https://github.com/bennyhch/case-management-dashboard.git
 cd case-management-dashboard
 ```
 
-### 2. Clone the repo
+### 2. Install dependencies
 
 ```
 npm install
