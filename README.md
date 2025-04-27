@@ -78,7 +78,7 @@ npm run dev
 
 ### Test
 
-If you need to run test, just run the following command after installing all the dependency
+If you need to run tests, execute the following command after installing all dependencies:
 
 ```
 npm run test
