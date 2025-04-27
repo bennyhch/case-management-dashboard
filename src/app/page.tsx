@@ -157,14 +157,7 @@ export default function Home() {
                 type="submit"
                 className="bg-purple-500 rounded-2xl py-2 px-3 flex items-center gap-2 text-white cursor-pointer"
               >
-                {/* <MdLock /> */}
                 <span>Add Task</span>
-              </button>
-              <button
-                type="reset"
-                className="border-purple-500 rounded-2xl py-2 px-3 flex items-center gap-2 text-purple-500 border-1 cursor-pointer"
-              >
-                <span>Clear</span>
               </button>
             </div>
           </form>
