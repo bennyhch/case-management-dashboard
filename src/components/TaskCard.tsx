@@ -56,7 +56,7 @@ const TaskCard = ({
   fetchTasks,
 }: TaskCardProps) => {
   const momentDueDate = moment(dueDate);
-  const formattedDueDate = momentDueDate.format("MMMM Do YYYY");
+  const formattedDueDate = momentDueDate.format("MMMM Do YYYY, h:mm A");
   const isoDate = momentDueDate.toISOString();
 
   const [isEditing, setIsEditing] = useState(false);

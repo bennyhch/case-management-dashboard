@@ -1,6 +1,7 @@
 import { prisma } from "@/lib/prisma";
 import { NextResponse } from "next/server";
 
+// Get all tasks
 export async function GET() {
   const tasks = await prisma.task.findMany({
     where: {
@@ -20,6 +21,7 @@ export async function GET() {
   return NextResponse.json(tasks, { status: 200 });
 }
 
+// Create a new task
 export async function POST(req: Request) {
   const { title, description, status, dueDate } = await req.json();
 
