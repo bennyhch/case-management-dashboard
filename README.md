@@ -76,3 +76,13 @@ npx prisma migrate dev --name init
 ```
 npm run dev
 ```
+
+<hr/>
+
+### Test
+
+If you need to run test, just run the following command after installing all the dependency
+
+```
+npm run test
+```
