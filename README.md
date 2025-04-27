@@ -8,7 +8,6 @@ A simple task management app built with **Next.js**, **TypeScript**, **TailwindC
 
 - Create, view, update, and soft-delete tasks.
 - Update task status directly from the task card.
-- Tasks organized responsively (2 per row on desktop, 1 per row on mobile).
 - Soft delete system (no permanent deletion).
 - API endpoints fully RESTful.
 - Responsive design
@@ -20,7 +19,7 @@ A simple task management app built with **Next.js**, **TypeScript**, **TailwindC
 - **Next.js 14 (App Router)**
 - **TypeScript**
 - **Tailwind CSS**
-- **Prisma ORM** (with MySQL/PostgreSQL/SQlite)
+- **Prisma ORM** (with MySQL)
 - **React Hooks** (useState, useEffect)
 
 ---
@@ -34,8 +33,6 @@ A simple task management app built with **Next.js**, **TypeScript**, **TailwindC
 | GET    | `/api/tasks/:id` | Fetch a single task    |
 | PATCH  | `/api/tasks/:id` | Update task status     |
 | DELETE | `/api/tasks/:id` | Soft delete a task     |
-
-<!-- [Full API Documentation](#-API_DOCUMENTATION) -->
 
 [Full API Documentation](./API_DOCUMENTATION.md)
 
